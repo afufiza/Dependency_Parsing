@@ -143,7 +143,7 @@ class ParserModel(nn.Module):
 
         x = self.embedding_lookup(t)
         x = self.embed_to_hidden(x)
-        x = F.relu(x)
+        x = nn.functional.relu(x)
         x = self.dropout(x)
         logits = self.hidden_to_logits(x)
 
